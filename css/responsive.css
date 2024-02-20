@@ -1,69 +1,118 @@
-@media (max-width: 1120px) {}
+/* Para pantallas grandes, usa el 100% del ancho de la pantalla */
+@media (min-width: 1200px) {
+    .container {
+      width: 100%;
+      max-width: none; /* Elimina el máximo ancho predeterminado de Bootstrap */
+    }
+    
+.call_to-btn {
+    display: inline-block;
+    padding: 15px 45px;
+    border-radius: 10px;
+    border-color: #0f0202;
+    font-size: 15px;
+    background-color: #b4ddf8d2;
+    color: #262627;
+    font-weight: 600;
+    transition: all 0.3s ease 0s;
+  }
+  
+    .hero-container {
+      flex-direction: row-reverse; /* Cambia la dirección de los elementos a lado a lado */
+      justify-content: space-between; /* Distribuye el espacio entre los elementos */
+      align-items: center; /* Alinea los elementos verticalmente */
+      width: 100%; /* Asegura que el contenedor no sea más ancho que la pantalla */
+    }
+  
+    .hero_detail-box, .hero_img-container {
+      flex: 1; /* Asigna el mismo espacio a ambos elementos */
+    }
+  
+    /* Ajusta los tamaños de los elementos internos según sea necesario */
+    .hero_img-container img {
+      max-width: 90%; /* Aumenta el tamaño máximo de la imagen */
+      height: auto; /* Mantiene la proporción de la imagen */
+    }
+    .hero_img-container {
+      order: -1; /* Mueve la imagen al lado izquierdo */
+      margin-right: 2%; /* Añade un poco de margen entre los elementos */
+      height: auto; /* Ajusta la altura automáticamente según el ancho */
+    }
+  
+    /* Si quieres que el contenido tenga un ancho máximo pero más grande que el predeterminado de Bootstrap */
+    .container {
+      max-width: 1600px; /* o el ancho que prefieras */
+    }
+  }
+  
+
+
+@media (max-width: 1200px) {
+    .hero_detail-box,
+    .hero_img-container {
+      width: 100%; /* Asegura que no sean más anchos que la pantalla */
+      margin-right: 0;
+      margin-top: 0;
+    }
+}
 
 @media (max-width: 992px) {
-
-
-    .hero-container {
-        flex-direction: column;
-    }
-
-    .hero_detail-box {
-        width: 100%;
-        margin-bottom: 45px;
-    }
-
+    .hero_detail-box,
     .hero_img-container {
-        width: 100%;
+      width: 100%; /* Asegura que no sean más anchos que la pantalla */
+      margin-right: 0;
+      margin-top: 0;
     }
-
-    .hero-container.container {
-        padding-top: 45px;
+    .hero_img-container {
+      width: 100%;
+      margin-bottom: 20px;
     }
-
-    .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
-        color: #fff;
+  
+    .custom_nav-container .navbar-nav .nav-link {
+      color: #000; /* Cambia a un color visible en fondo claro si es necesario */
     }
+  }
+  
 
 
-}
-
-
-@media (max-width: 768px) {
-
-
-    .hero_detail-box {
-        text-align: center;
+  @media (max-width: 768px) {
+    .hero_detail-box,
+    .hero_img-container {
+      width: 100%; /* Asegura que no sean más anchos que la pantalla */
+      margin-right: 0;
+      margin-top: 0;
     }
-
-    .hero_detail-box h1 {
-        width: 100%;
+    .hero_detail-box h1,
+    .hero_detail-box h2 { /* Ajusta también los h2 si los hay */
+      font-size: 1.5rem; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
     }
-
-    .top_container::after {
-        display: none;
-    }
-
-    .top_container::before {
-        background-size: cover;
-    }
-
-    .info_section .col-md-3 {
-        padding: 20px 25px;
-        text-align: center;
-    }
-
+  
+    .info_section .col-md-3,
     .common_style img {
-        width: 100%;
-        margin: 20px auto;
+      width: 100%;
+      padding: 0; /* Ajusta el padding si es necesario */
+      margin: 0 auto;
+      text-align: center;
     }
-
-}
+  }
+  
 
 @media (max-width: 576px) {
     .hero-container {
-        padding-bottom: 100px;
-    }
-
+        padding-bottom: 50px;
+      }
+      .hero_detail-box p,
+      .hero_detail-box a { /* Asegúrate de incluir todos los elementos de texto */
+        font-size: 0.9rem;
+      }
+      .contact_section,
+      .sub_page .contact_section {
+        padding: 20px 15px;
+      }
+      .contact_section input,
+      .info_section .social-box {
+        width: 100%;
+      }
     .client_img-box::before,
     .client_img-box::after {
         content: "";
